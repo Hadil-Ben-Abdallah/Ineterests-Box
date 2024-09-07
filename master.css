@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+body {
+  background-color: #2b588b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+:root {
+  --main-color: #3067a5;
+  --background-color: rgba(37, 170, 214, 0.272);
+  --elements-background-color: #f8fcff;
+  --element-border-color: #e0e0e1;
+}
+
+.parent {
+  margin: 40px auto;
+  background-color: #f7f7f7;
+  padding: 7px;
+  width: 800px;
+}
+
+.title {
+  padding: 20px;
+  text-align: center;
+  color: var(--main-color);
+  font-size: 20px;
+  background-color: var(--background-color);
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(4, 185.5px);
+  grid-template-rows: 130px 130px;
+  margin-top: 15px;
+  gap: 15px;
+}
+
+.box > div {
+  border: 2px solid var(--element-border-color);
+  border-radius: 5px;
+  background-color: var(--elements-background-color);
+}
+
+.box label{
+  display: grid;
+  text-align: center;
+}
+
+.box i {
+  z-index: 99;
+}
+
+label div:nth-of-type(2) {
+  text-align: center;
+}
+
+.box > div:nth-child(1) i {
+  color: #e34c26;
+}
+
+.box > div:nth-child(2) i {
+  color: #2986f1;
+}
+
+.box > div:nth-child(3) i {
+  color: 	#e593f7;
+}
+
+.box > div:nth-child(4) i {
+  color: 	#7e58d9;
+}
+
+.box > div:nth-child(5) i {
+  color: 	#F0DB4F;
+}
+
+.box > div:nth-child(6) i {
+  color: 	#61DBFB;
+}
+
+.box > div:nth-child(7) i {
+  color: 	#F1502F;
+}
+
+.box input {
+  width: 22px;
+  height: 22px;
+  margin: 9px 0 0 9px;
+  position: relative;
+}
+
+.box input::before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--background-color);
+  outline: 1.9px solid var(--main-color);
+  border: 4px solid var(--elements-background-color);
+  top: 1px;
+  left: 1px;
+  border-radius: 2px;
+  visibility: hidden;
+}
+
+.box input:hover::before {
+  visibility: visible;
+}
+
+input[type=checkbox]:checked {
+  appearance: none;
+  &::before {
+    visibility: visible;
+  }
+}
+
+.box > div:has(:checked) {
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  background-color: var(--background-color);
+}
